@@ -151,3 +151,20 @@ Wed 16 Aug 2023 02:15:14 PM UTC:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 72c69ff
+Wed 16 Aug 2023 02:17:44 PM UTC: 
+ exercises.c | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+In file included from test.c:1:
+exercises.c: In function ‘mergeSortedArrays’:
+exercises.c:82:19: error: expected identifier or ‘(’ before ‘int’
+   82 |   for (int i = 0, int j = 0,int k = 0; i < size1 && j < size2; k++) {
+      |                   ^~~
+exercises.c:82:53: error: ‘j’ undeclared (first use in this function)
+   82 |   for (int i = 0, int j = 0,int k = 0; i < size1 && j < size2; k++) {
+      |                                                     ^
+exercises.c:82:53: note: each undeclared identifier is reported only once for each function it appears in
+exercises.c:82:64: error: ‘k’ undeclared (first use in this function)
+   82 |   for (int i = 0, int j = 0,int k = 0; i < size1 && j < size2; k++) {
+      |                                                                ^
+Compilation failed
+ae1d08d
