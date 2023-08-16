@@ -34,3 +34,14 @@ Wed 16 Aug 2023 12:34:59 AM UTC:
  tests:  0|5
 total_score: 20/70
 97c7dfe
+Wed 16 Aug 2023 12:35:45 AM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:1:
+exercises.c: In function ‘reverseArray’:
+exercises.c:38:22: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+   38 |   for(int i=size-1 ; i=0 ; i--){
+      |                      ^
+cc1: all warnings being treated as errors
+Compilation failed
+4f05337
