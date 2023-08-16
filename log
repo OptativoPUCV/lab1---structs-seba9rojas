@@ -96,3 +96,21 @@ exercises.c:81:3: error: implicit declaration of function ‘mergeSort’ [-Werr
 cc1: all warnings being treated as errors
 Compilation failed
 a7fe953
+Wed 16 Aug 2023 02:05:49 PM UTC: 
+ exercises.c | 18 +++++-------------
+ 1 file changed, 5 insertions(+), 13 deletions(-)
+In file included from test.c:1:
+exercises.c: In function ‘mergeSortedArrays’:
+exercises.c:83:33: error: ‘tamaño1’ undeclared (first use in this function)
+   83 |   for (i = 0, j = 0, k = 0; i < tamaño1 && j < tamaño2; k++) {
+      |                                 ^~~~~~~
+exercises.c:83:33: note: each undeclared identifier is reported only once for each function it appears in
+exercises.c:83:49: error: ‘tamaño2’ undeclared (first use in this function)
+   83 |   for (i = 0, j = 0, k = 0; i < tamaño1 && j < tamaño2; k++) {
+      |                                                ^~~~~~~
+exercises.c:85:11: error: ‘resultado’ undeclared (first use in this function); did you mean ‘result’?
+   85 |           resultado[k] = arr1[i];
+      |           ^~~~~~~~~
+      |           result
+Compilation failed
+295f845
