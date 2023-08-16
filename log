@@ -63,3 +63,25 @@ Wed 16 Aug 2023 12:41:00 AM UTC:
  tests:  0|4
 total_score: 30/70
 362ba1d
+Wed 16 Aug 2023 02:02:10 PM UTC: 
+ exercises.c | 27 +++++++++++++++++++++++++++
+ 1 file changed, 27 insertions(+)
+In file included from test.c:1:
+exercises.c: In function ‘mergeSortedArrays’:
+exercises.c:81:3: error: implicit declaration of function ‘mergeSort’ [-Werror=implicit-function-declaration]
+   81 |   mergeSort(arr1, 0, tamaño1 - 1);
+      |   ^~~~~~~~~
+exercises.c:81:22: error: ‘tamaño1’ undeclared (first use in this function)
+   81 |   mergeSort(arr1, 0, tamaño1 - 1);
+      |                      ^~~~~~~
+exercises.c:81:22: note: each undeclared identifier is reported only once for each function it appears in
+exercises.c:82:24: error: ‘tamaño2’ undeclared (first use in this function)
+   82 |     mergeSort(arr2, 0, tamaño2 - 1);
+      |                        ^~~~~~~
+exercises.c: At top level:
+exercises.c:110:1: error: expected identifier or ‘(’ before ‘}’ token
+  110 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+5d4ed64
