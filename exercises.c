@@ -9,14 +9,32 @@ Ejercicio 1: Encuentra el Elemento Mayor
 Descripción: Escribe una función que tome un arreglo de enteros
 y su tamaño, y devuelva el valor más grande del arreglo.
 */
-int findMax(int arr[], int size) { return 0; }
+int findMax(int arr[], int size){
+  if(size == 0){
+    return -1;
+  }
+
+  int elementoMayor=arr[0];
+  for(int i=0; i<size ;i++){
+    if(arr[i]>elementoMayor){
+      elementoMayor=arr[i];
+    }
+  }
+
+  return elementoMayor;  
+}
 
 /*
 Ejercicio 2: Invertir un Arreglo
 Descripción: Escribe una función que tome un arreglo y su tamaño, y luego
 invierta el orden de sus elementos.
 */
-void reverseArray(int arr[], int size) {}
+void reverseArray(int arr[], int size) {
+  for(int i=size-1 ; i>=0 ; i--){
+    printf("%d ",arr[i]);
+  }
+  printf("\n");  
+}
 
 /*
 Ejercicio 3: Filtrar Números Pares
@@ -24,7 +42,33 @@ Descripción: Escribe una función que tome un arreglo de enteros
 y su tamaño, y luego devuelva un nuevo arreglo que contenga solo
 los números pares del arreglo original.
 */
-int *filterEvenNumbers(int arr[], int size, int *newSize) { return NULL; }
+int *filterEvenNumbers(int arr[], int size, int *newSize){
+  int contadorPar=0;
+
+  for(int i=0 ; i<size ; i++){
+    if(arr[i]%2==0){
+      contadorPar++;
+    }
+  }
+
+  int *arregloPar=(int *)malloc(contadorPar *sizeof(int));
+  if(arregloPar==NULL){
+    *newSize=0;
+    return NULL;
+  }
+
+  int indiceArregloPar=0;
+  for (int i = 0; i < size; i++) {
+        if (arr[i] % 2 == 0) {
+            arregloPar[indiceArregloPar] = arr[i];
+            indiceArregloPar++;
+        }
+    }
+
+    *newSize = contadorPar;
+    return arregloPar;
+  
+}
 
 /*
 Ejercicio 4: Fusión de dos Arreglos Ordenados
@@ -32,8 +76,10 @@ Descripción: Escribe una función que tome dos arreglos
 ordenados y sus tamaños, y luego fusione estos dos
 arreglos en un tercer arreglo también ordenado.
 */
-void mergeSortedArrays(int arr1[], int size1, int arr2[], int size2,
-                       int result[]) {}
+void mergeSortedArrays(int arr1[], int size1, int arr2[], int size2,int result[]){
+
+
+}
 
 /*
 Ejercicio 5: Comprobación de Ordenación
@@ -41,7 +87,13 @@ Descripción: Escribe una función que tome un arreglo y su tamaño,
 y luego devuelva 1 si el arreglo está ordenado en orden ascendente,
   0 si no está ordenado, y -1 si está ordenado en orden descendente.
 */
-int checkSorted(int arr[], int size) { return -2; }
+int checkSorted(int arr[], int size) { 
+  return -2; 
+
+
+
+
+}
 
 /*
 Ejercicio 6: Información de una Biblioteca
@@ -62,8 +114,12 @@ typedef struct {
   int anioPublicacion;
 } Libro;
 
-void inicializarLibro(Libro *libro, const char *titulo, const char *nombreAutor,
-                      int anioNacimiento, int anioPublicacion) {}
+void inicializarLibro(Libro *libro, const char *titulo, const char *nombreAutor,int anioNacimiento, int anioPublicacion) {
+
+
+
+  
+}
 
 /*
 Ejercicio 7: Lista enlazada de números
@@ -81,4 +137,8 @@ typedef struct nodo {
   struct nodo *siguiente; // puntero al siguiente nodo
 } Nodo;
 
-Nodo *crearListaEnlazada(int arr[], int size) { return NULL; }
+Nodo *crearListaEnlazada(int arr[], int size) { 
+
+  
+  return NULL; 
+}
