@@ -85,3 +85,14 @@ exercises.c:110:1: error: expected identifier or ‘(’ before ‘}’ token
 cc1: all warnings being treated as errors
 Compilation failed
 5d4ed64
+Wed 16 Aug 2023 02:03:55 PM UTC: 
+ exercises.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+In file included from test.c:1:
+exercises.c: In function ‘mergeSortedArrays’:
+exercises.c:81:3: error: implicit declaration of function ‘mergeSort’ [-Werror=implicit-function-declaration]
+   81 |   mergeSort(arr1, 0, size1 - 1);
+      |   ^~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+a7fe953
