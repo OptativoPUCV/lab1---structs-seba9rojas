@@ -128,3 +128,15 @@ exercises.c:83:49: error: ‘tamaño2’ undeclared (first use in this function)
       |                                                ^~~~~~~
 Compilation failed
 ef12421
+Wed 16 Aug 2023 02:06:07 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:1:
+exercises.c: In function ‘mergeSortedArrays’:
+exercises.c:83:33: error: ‘size’ undeclared (first use in this function); did you mean ‘size2’?
+   83 |   for (i = 0, j = 0, k = 0; i < size && j < size2; k++) {
+      |                                 ^~~~
+      |                                 size2
+exercises.c:83:33: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+e8eabd4
