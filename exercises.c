@@ -30,11 +30,6 @@ Descripción: Escribe una función que tome un arreglo y su tamaño, y luego
 invierta el orden de sus elementos.
 */
 void reverseArray(int arr[], int size){
-  for(int i=0; i<size-1 ; i++){
-    printf("%d ",arr[i]);
-  }
-  printf("\n");
-  
   for(int i=size-1 ; i<=0 ; i--){
     printf("%d ",arr[i]);
   }
