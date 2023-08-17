@@ -404,3 +404,13 @@ In function ‘strncpy’,
 cc1: all warnings being treated as errors
 Compilation failed
 69eeee0
+Thu 17 Aug 2023 03:15:05 AM UTC: 
+ exercises.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+In file included from test.c:1:
+exercises.c: In function ‘inicializarLibro’:
+exercises.c:165:10: error: ‘Libro’ has no member named ‘libro’
+  165 |     libro->libro.anioPublicacion = anioPublicacion;
+      |          ^~
+Compilation failed
+aa47ff5
