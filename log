@@ -338,3 +338,28 @@ exercises.c:164:33: error: ‘anioNacimientoAutor’ undeclared (first use in th
 exercises.c:164:33: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 581c32f
+Thu 17 Aug 2023 03:11:02 AM UTC: 
+ exercises.c | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+In file included from test.c:1:
+exercises.c: In function ‘inicializarLibro’:
+exercises.c:162:9: error: ‘libro’ redeclared as different kind of symbol
+  162 |   Libro libro;
+      |         ^~~~~
+exercises.c:161:30: note: previous definition of ‘libro’ was here
+  161 | void inicializarLibro(Libro *libro, const char *titulo, const char *nombreAutor,int anioNacimiento, int anioPublicacion){
+      |                       ~~~~~~~^~~~~
+exercises.c:165:34: error: ‘anioNacimientoAutor’ undeclared (first use in this function); did you mean ‘anioNacimiento’?
+  165 |     libro.autor.anioNacimiento = anioNacimientoAutor;
+      |                                  ^~~~~~~~~~~~~~~~~~~
+      |                                  anioNacimiento
+exercises.c:165:34: note: each undeclared identifier is reported only once for each function it appears in
+exercises.c:167:12: error: ‘return’ with a value, in function returning void [-Werror=return-type]
+  167 |     return libro;
+      |            ^~~~~
+exercises.c:161:6: note: declared here
+  161 | void inicializarLibro(Libro *libro, const char *titulo, const char *nombreAutor,int anioNacimiento, int anioPublicacion){
+      |      ^~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+2f9511f
