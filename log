@@ -246,3 +246,21 @@ exercises.c:163:58: error: ‘autor’ undeclared (first use in this function); 
 exercises.c:163:58: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 e29b1cb
+Thu 17 Aug 2023 03:04:45 AM UTC: 
+ exercises.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:1:
+exercises.c: In function ‘inicializarLibro’:
+exercises.c:163:18: error: ‘Libro’ has no member named ‘Autor’; did you mean ‘autor’?
+  163 |   strncpy(libro->Autor.nombre, nombreAutor, sizeof(libro>Autor.nombre));
+      |                  ^~~~~
+      |                  autor
+exercises.c:163:58: error: expected expression before ‘Autor’
+  163 |   strncpy(libro->Autor.nombre, nombreAutor, sizeof(libro>Autor.nombre));
+      |                                                          ^~~~~
+exercises.c:164:10: error: ‘Libro’ has no member named ‘Autor’; did you mean ‘autor’?
+  164 |   libro->Autor.anioNacimiento = anioNacimiento;
+      |          ^~~~~
+      |          autor
+Compilation failed
+b2c1290
