@@ -150,13 +150,13 @@ inicializar la información de un libro.
 typedef struct {
   char nombre[50];
   int anioNacimiento;
-} autor;
+} Autor;
 
 typedef struct {
   char titulo[100];
   Autor autor;
   int anioPublicacion;
-} libro;
+} Libro;
 
 void inicializarLibro(Libro *libro, const char *titulo, const char *nombreAutor,int anioNacimiento, int anioPublicacion){
   strncpy(libro->titulo, titulo, sizeof(libro->titulo));

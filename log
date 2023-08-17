@@ -326,3 +326,15 @@ test.c:315:14: error: request for member ‘anioPublicacion’ in something not 
 cc1: all warnings being treated as errors
 Compilation failed
 72087f9
+Thu 17 Aug 2023 03:06:54 AM UTC: 
+ exercises.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:1:
+exercises.c: In function ‘inicializarLibro’:
+exercises.c:164:33: error: ‘anioNacimientoAutor’ undeclared (first use in this function); did you mean ‘anioNacimiento’?
+  164 |   libro->autor.anioNacimiento = anioNacimientoAutor;
+      |                                 ^~~~~~~~~~~~~~~~~~~
+      |                                 anioNacimiento
+exercises.c:164:33: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+581c32f
