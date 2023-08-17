@@ -234,3 +234,15 @@ exercises.c:164:33: error: ‘anioNacimientoAutor’ undeclared (first use in th
       |                                 anioNacimiento
 Compilation failed
 bb0878c
+Thu 17 Aug 2023 03:04:21 AM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:1:
+exercises.c: In function ‘inicializarLibro’:
+exercises.c:163:58: error: ‘autor’ undeclared (first use in this function); did you mean ‘Autor’?
+  163 |   strncpy(libro->autor.nombre, nombreAutor, sizeof(libro>autor.nombre));
+      |                                                          ^~~~~
+      |                                                          Autor
+exercises.c:163:58: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+e29b1cb
