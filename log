@@ -174,3 +174,13 @@ Wed 16 Aug 2023 02:18:48 PM UTC:
  tests:  0|3
 total_score: 40/70
 dcce4c9
+Thu 17 Aug 2023 02:54:08 AM UTC: 
+ exercises.c | 28 ++++++++++++++++++++++++++++
+ 1 file changed, 28 insertions(+)
+In file included from test.c:1:
+exercises.c:110:7: error: ‘checkSorted’ defined but not used [-Werror=unused-function]
+  110 |   int checkSorted(int arr[], int size) {
+      |       ^~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+53c3f45
