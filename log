@@ -276,3 +276,53 @@ exercises.c:164:33: error: ‘anioNacimientoAutor’ undeclared (first use in th
 exercises.c:164:33: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 6071af6
+Thu 17 Aug 2023 03:06:42 AM UTC: 
+ exercises.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:1:
+exercises.c:157:3: error: unknown type name ‘Autor’
+  157 |   Autor autor;
+      |   ^~~~~
+exercises.c:161:23: error: unknown type name ‘Libro’; did you mean ‘libro’?
+  161 | void inicializarLibro(Libro *libro, const char *titulo, const char *nombreAutor,int anioNacimiento, int anioPublicacion){
+      |                       ^~~~~
+      |                       libro
+test.c:289:26: error: unknown type name ‘Libro’
+  289 | void imprimirLibro(const Libro *libro) {
+      |                          ^~~~~
+test.c: In function ‘imprimirLibro’:
+test.c:290:36: error: request for member ‘titulo’ in something not a structure or union
+  290 |   printf("    Título: %s\n", libro->titulo);
+      |                                   ^~
+test.c:291:50: error: request for member ‘autor’ in something not a structure or union
+  291 |   printf("    Autor: %s (Nacido en: %d)\n", libro->autor.nombre, libro->autor.anioNacimiento);
+      |                                                  ^~
+test.c:291:71: error: request for member ‘autor’ in something not a structure or union
+  291 |   printf("    Autor: %s (Nacido en: %d)\n", libro->autor.nombre, libro->autor.anioNacimiento);
+      |                                                                       ^~
+test.c:292:49: error: request for member ‘anioPublicacion’ in something not a structure or union
+  292 |   printf("    Año de Publicación: %d\n", libro->anioPublicacion);
+      |                                               ^~
+test.c: In function ‘test_biblioteca’:
+test.c:296:3: error: unknown type name ‘Libro’; did you mean ‘libro’?
+  296 |   Libro libro;
+      |   ^~~~~
+      |   libro
+test.c:306:5: error: implicit declaration of function ‘inicializarLibro’ [-Werror=implicit-function-declaration]
+  306 |     inicializarLibro(&libro, titulos[i], autores[i], aniosNacimiento[i],
+      |     ^~~~~~~~~~~~~~~~
+test.c:312:21: error: request for member ‘titulo’ in something not a structure or union
+  312 |     if (strcmp(libro.titulo, titulos[i]) != 0 ||
+      |                     ^
+test.c:313:21: error: request for member ‘autor’ in something not a structure or union
+  313 |         strcmp(libro.autor.nombre, autores[i]) != 0 ||
+      |                     ^
+test.c:314:14: error: request for member ‘autor’ in something not a structure or union
+  314 |         libro.autor.anioNacimiento != aniosNacimiento[i] ||
+      |              ^
+test.c:315:14: error: request for member ‘anioPublicacion’ in something not a structure or union
+  315 |         libro.anioPublicacion != aniosPublicacion[i]) {
+      |              ^
+cc1: all warnings being treated as errors
+Compilation failed
+72087f9
