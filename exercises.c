@@ -184,36 +184,39 @@ typedef struct nodo {
   struct nodo *siguiente; // puntero al siguiente nodo
 } Nodo;
 
-Nodo *crearListaEnlazada(int arr[], int size) {
+Nodo *crearListaEnlazada(int arr[], int size){
   if (size == 0) {
         return NULL;
-  }
-    
-  Nodo* primerNodo = (Nodo*)malloc(sizeof(Nodo));
-  if (primerNodo == NULL) {
-    printf("Error al asignar memoria.\n");
-    exit(1);
-  }
-    
-  primerNodo->dato = arr[0];
-  primerNodo->siguiente = NULL;
-    
-  Nodo* nodoActual = primerNodo;
-    
-  for (int i = 1; i < size; i++) {
-    Nodo* nuevoNodo = (Nodo*)malloc(sizeof(Nodo));
-    if (nuevoNodo == NULL) {
-      printf("Error al asignar memoria.\n");
-      exit(1);
     }
-        
-  nuevoNodo->dato = arr[i];
-  nuevoNodo->siguiente = NULL;
-        
-  nodoActual->siguiente = nuevoNodo;
-  nodoActual = nuevoNodo;
+
+    Nodo* primerNodo = (Nodo*)malloc(sizeof(Nodo));
+    if (primerNodo == NULL) {
+        printf("Error al asignar memoria.\n");
+        exit(1);
     }
-    
-  return primerNodo;
-  
+
+    primerNodo->numero = arr[0];
+    primerNodo->siguiente = NULL;
+
+    Nodo* nodoActual = primerNodo;
+
+    for (int i = 1; i < size; i++) {
+        Nodo* nuevoNodo = (Nodo*)malloc(sizeof(Nodo));
+        if (nuevoNodo == NULL) {
+            printf("Error al asignar memoria.\n");
+            exit(1);
+        }
+
+        nuevoNodo->numero = arr[i];
+        nuevoNodo->siguiente = NULL;
+
+        nodoActual->siguiente = nuevoNodo;
+        nodoActual = nuevoNodo;
+    }
+
+    return primerNodo;
+
+
+  return NULL;
 }
+  

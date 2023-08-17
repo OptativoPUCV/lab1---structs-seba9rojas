@@ -503,3 +503,9 @@ exercises.c:210:12: error: ‘Nodo’ {aka ‘struct nodo’} has no member name
       |            ^~
 Compilation failed
 e3fbf78
+Thu 17 Aug 2023 03:26:59 AM UTC: 
+ exercises.c | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+ tests:  0|0
+total_score: 70/70
+189ddef
