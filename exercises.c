@@ -160,9 +160,9 @@ typedef struct {
 
 void inicializarLibro(Libro *libro, const char *titulo, const char *nombreAutor,int anioNacimiento, int anioPublicacion){
   strncpy(libro->titulo, titulo, sizeof(libro->titulo) - 1);
-    strncpy(libro->autor.nombre, nombreAutor, sizeof(libro->autor.nombre) - 1);
-    libro->autor.anioNacimiento = anioNacimiento;
-    libro->anioPublicacion = anioPublicacion;
+  strncpy(libro->autor.nombre, nombreAutor, sizeof(libro->autor.nombre) - 1);
+  libro->autor.anioNacimiento = anioNacimiento;
+  libro->anioPublicacion = anioPublicacion;
 
   
 }
@@ -184,8 +184,37 @@ typedef struct nodo {
   struct nodo *siguiente; // puntero al siguiente nodo
 } Nodo;
 
-Nodo *crearListaEnlazada(int arr[], int size) { 
+Nodo *crearListaEnlazada(int arr[], int size) {
+  if (size == 0) {
+        return NULL;
+    }
+    
+    Nodo* primerNodo = (Nodo*)malloc(sizeof(Nodo));
+    if (primerNodo == NULL) {
+        printf("Error al asignar memoria.\n");
+        exit(1);
+    }
+    
+    primerNodo->dato = arr[0];
+    primerNodo->siguiente = NULL;
+    
+    Nodo* nodoActual = primerNodo;
+    
+    for (int i = 1; i < size; i++) {
+        Nodo* nuevoNodo = (Nodo*)malloc(sizeof(Nodo));
+        if (nuevoNodo == NULL) {
+            printf("Error al asignar memoria.\n");
+            exit(1);
+        }
+        
+        nuevoNodo->dato = arr[i];
+        nuevoNodo->siguiente = NULL;
+        
+        nodoActual->siguiente = nuevoNodo;
+        nodoActual = nuevoNodo;
+    }
+    
+    return primerNodo;
 
-  
-  return NULL; 
+ 
 }
