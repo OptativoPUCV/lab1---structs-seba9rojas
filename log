@@ -190,3 +190,31 @@ Thu 17 Aug 2023 02:54:48 AM UTC:
  tests:  0|2
 total_score: 50/70
 6d486ad
+Thu 17 Aug 2023 03:01:48 AM UTC: 
+ exercises.c | 10 +++++++---
+ 1 file changed, 7 insertions(+), 3 deletions(-)
+In file included from test.c:1:
+exercises.c: In function ‘inicializarLibro’:
+exercises.c:162:34: error: ‘MAX_TITULO_LEN’ undeclared (first use in this function)
+  162 |   strncpy(libro->titulo, titulo, MAX_TITULO_LEN);
+      |                                  ^~~~~~~~~~~~~~
+exercises.c:162:34: note: each undeclared identifier is reported only once for each function it appears in
+exercises.c:163:45: error: ‘MAX_AUTOR_LEN’ undeclared (first use in this function)
+  163 |   strncpy(libro->autor.nombre, nombreAutor, MAX_AUTOR_LEN);
+      |                                             ^~~~~~~~~~~~~
+exercises.c:164:15: error: ‘Autor’ has no member named ‘edad’
+  164 |   libro->autor.edad = edadAutor;
+      |               ^
+exercises.c:164:23: error: ‘edadAutor’ undeclared (first use in this function)
+  164 |   libro->autor.edad = edadAutor;
+      |                       ^~~~~~~~~
+exercises.c:165:10: error: ‘Libro’ has no member named ‘añoPublicacion’; did you mean ‘anioPublicacion’?
+  165 |   libro->añoPublicacion = añoPublicacion;
+      |          ^~~~~~~~~~~~~~
+      |          anioPublicacion
+exercises.c:165:28: error: ‘añoPublicacion’ undeclared (first use in this function); did you mean ‘anioPublicacion’?
+  165 |   libro->añoPublicacion = añoPublicacion;
+      |                           ^~~~~~~~~~~~~~
+      |                           anioPublicacion
+Compilation failed
+756fc07

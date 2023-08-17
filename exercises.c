@@ -30,7 +30,7 @@ Descripción: Escribe una función que tome un arreglo y su tamaño, y luego
 invierta el orden de sus elementos.
 */
 void reverseArray(int arr[], int size){
-  for (int i = 0; i < size / 2; i++) {
+  for (int i = 0; i < size/2 ; i++) {
         int temp = arr[i];
         arr[i] = arr[size - 1 - i];
         arr[size - 1 - i] = temp;
@@ -108,11 +108,11 @@ y luego devuelva 1 si el arreglo está ordenado en orden ascendente,
 */
 int checkSorted(int arr[], int size){
   if (size <= 1) {
-        return 1;  // Un arreglo vacío o con un solo elemento se considera ordenado
+        return 1;
     }
 
-    int ascendente = 1;  // Suponemos que está ordenado en orden ascendente
-    int descendente = 1; // Suponemos que está ordenado en orden descendente
+  int ascendente = 1;
+  int descendente = 1;
 
     for (int i = 1; i < size; i++) {
         if (arr[i] > arr[i - 1]) {
@@ -158,7 +158,11 @@ typedef struct {
   int anioPublicacion;
 } Libro;
 
-void inicializarLibro(Libro *libro, const char *titulo, const char *nombreAutor,int anioNacimiento, int anioPublicacion) {
+void inicializarLibro(Libro *libro, const char *titulo, const char *nombreAutor,int anioNacimiento, int anioPublicacion){
+  strncpy(libro->titulo, titulo, MAX_TITULO_LEN);
+  strncpy(libro->autor.nombre, nombreAutor, MAX_AUTOR_LEN);
+  libro->autor.edad = edadAutor;
+  libro->añoPublicacion = añoPublicacion;
 
 
 
