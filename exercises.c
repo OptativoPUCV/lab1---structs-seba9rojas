@@ -79,7 +79,7 @@ ordenados y sus tamaños, y luego fusione estos dos
 arreglos en un tercer arreglo también ordenado.
 */
 void mergeSortedArrays(int arr1[], int size1, int arr2[], int size2,int result[]){
-  //int i,j,k;
+  int i,j,k;
     
   for (int = 0,int j = 0,int k = 0; i < size1 && j < size2; k++) {
       if (arr1[i] < arr2[j]) {
@@ -91,11 +91,11 @@ void mergeSortedArrays(int arr1[], int size1, int arr2[], int size2,int result[]
         }
   }
     
-  for (i=0,k=0; i < size1; i++, k++) {
+  for (; i < size1; i++, k++) {
       result[k] = arr1[i];
   }
     
-    for (j=0,k=0; j < size2; j++, k++) {
+    for (; j < size2; j++, k++) {
         result[k] = arr2[j];
     }
 }
