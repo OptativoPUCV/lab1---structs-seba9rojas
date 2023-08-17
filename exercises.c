@@ -200,7 +200,7 @@ Nodo *crearListaEnlazada(int arr[], int size) {
     
   Nodo* nodoActual = primerNodo;
     
-  for (int i = 1; i < tamaño; i++) {
+  for (int i = 1; i < size; i++) {
     Nodo* nuevoNodo = (Nodo*)malloc(sizeof(Nodo));
     if (nuevoNodo == NULL) {
       printf("Error al asignar memoria.\n");
