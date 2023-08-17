@@ -509,3 +509,30 @@ Thu 17 Aug 2023 03:26:59 AM UTC:
  tests:  0|0
 total_score: 70/70
 189ddef
+Thu 17 Aug 2023 08:15:37 PM UTC: 
+ exercises.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:1:
+exercises.c: In function ‘mergeSortedArrays’:
+exercises.c:84:18: error: expected identifier or ‘(’ before ‘int’
+   84 |   for (int i = 0,int j = 0,int k = 0; i < size1 && j < size2; k++) {
+      |                  ^~~
+exercises.c:84:52: error: ‘j’ undeclared (first use in this function)
+   84 |   for (int i = 0,int j = 0,int k = 0; i < size1 && j < size2; k++) {
+      |                                                    ^
+exercises.c:84:52: note: each undeclared identifier is reported only once for each function it appears in
+exercises.c:84:63: error: ‘k’ undeclared (first use in this function)
+   84 |   for (int i = 0,int j = 0,int k = 0; i < size1 && j < size2; k++) {
+      |                                                               ^
+exercises.c:94:10: error: ‘i’ undeclared (first use in this function)
+   94 |   for (; i < size1; i++, k++) {
+      |          ^
+exercises.c:94:24: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+   94 |   for (; i < size1; i++, k++) {
+      |                        ^
+exercises.c:98:26: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+   98 |     for (; j < size2; j++, k++) {
+      |                          ^
+cc1: all warnings being treated as errors
+Compilation failed
+4cfc4ce

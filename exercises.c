@@ -9,6 +9,7 @@ Ejercicio 1: Encuentra el Elemento Mayor
 Descripción: Escribe una función que tome un arreglo de enteros
 y su tamaño, y devuelva el valor más grande del arreglo.
 */
+
 int findMax(int arr[], int size){
   if(size == 0){
     return -1;
@@ -78,9 +79,9 @@ ordenados y sus tamaños, y luego fusione estos dos
 arreglos en un tercer arreglo también ordenado.
 */
 void mergeSortedArrays(int arr1[], int size1, int arr2[], int size2,int result[]){
-  int i,j,k;
+  //int i,j,k;
     
-  for (i = 0, j = 0,k = 0; i < size1 && j < size2; k++) {
+  for (int i = 0,int j = 0,int k = 0; i < size1 && j < size2; k++) {
       if (arr1[i] < arr2[j]) {
           result[k] = arr1[i];
           i++;
@@ -115,7 +116,7 @@ int checkSorted(int arr[], int size){
   int descendente = 1;
 
     for (int i = 1; i < size; i++) {
-        if (arr[i] > arr[i - 1]) {
+        if (arr[i] > arr[i - 1]){
             descendente = 0;
         } else if (arr[i] < arr[i - 1]) {
             ascendente = 0;
@@ -131,14 +132,6 @@ int checkSorted(int arr[], int size){
     }
 }
   
-  
-
-
-
-
-
-
-
 /*
 Ejercicio 6: Información de una Biblioteca
 Descripción: Vamos a representar la información de una biblioteca. En la
@@ -162,9 +155,7 @@ void inicializarLibro(Libro *libro, const char *titulo, const char *nombreAutor,
   strncpy(libro->titulo, titulo, sizeof(libro->titulo) - 1);
   strncpy(libro->autor.nombre, nombreAutor, sizeof(libro->autor.nombre) - 1);
   libro->autor.anioNacimiento = anioNacimiento;
-  libro->anioPublicacion = anioPublicacion;
-
-  
+  libro->anioPublicacion = anioPublicacion; 
 }
   
 
@@ -185,38 +176,36 @@ typedef struct nodo {
 } Nodo;
 
 Nodo *crearListaEnlazada(int arr[], int size){
-  if (size == 0) {
+  if (size == 0){
         return NULL;
+  }
+
+  Nodo* primerNodo = (Nodo*)malloc(sizeof(Nodo));
+  if (primerNodo == NULL) {
+    printf("Error al asignar memoria.\n");
+    exit(1);
+  }
+
+  primerNodo->numero = arr[0];
+  primerNodo->siguiente = NULL;
+
+  Nodo* nodoActual = primerNodo;
+
+  for (int i = 1; i < size; i++) {
+    Nodo* nuevoNodo = (Nodo*)malloc(sizeof(Nodo));
+    if (nuevoNodo == NULL) {
+      printf("Error al asignar memoria.\n");
+      exit(1);
     }
 
-    Nodo* primerNodo = (Nodo*)malloc(sizeof(Nodo));
-    if (primerNodo == NULL) {
-        printf("Error al asignar memoria.\n");
-        exit(1);
-    }
+    nuevoNodo->numero = arr[i];
+    nuevoNodo->siguiente = NULL;
 
-    primerNodo->numero = arr[0];
-    primerNodo->siguiente = NULL;
+    nodoActual->siguiente = nuevoNodo;
+    nodoActual = nuevoNodo;
+  }
 
-    Nodo* nodoActual = primerNodo;
-
-    for (int i = 1; i < size; i++) {
-        Nodo* nuevoNodo = (Nodo*)malloc(sizeof(Nodo));
-        if (nuevoNodo == NULL) {
-            printf("Error al asignar memoria.\n");
-            exit(1);
-        }
-
-        nuevoNodo->numero = arr[i];
-        nuevoNodo->siguiente = NULL;
-
-        nodoActual->siguiente = nuevoNodo;
-        nodoActual = nuevoNodo;
-    }
-
-    return primerNodo;
-
-
+  return primerNodo;
   return NULL;
 }
   
