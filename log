@@ -456,3 +456,20 @@ exercises.c:210:18: error: ‘Nodo’ {aka ‘struct nodo’} has no member name
       |                  ^~
 Compilation failed
 d2e6232
+Thu 17 Aug 2023 03:22:17 AM UTC: 
+ exercises.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:1:
+exercises.c: In function ‘crearListaEnlazada’:
+exercises.c:188:7: error: ‘tamaño’ undeclared (first use in this function)
+  188 |   if (tamaño == 0) {
+      |       ^~~~~~
+exercises.c:188:7: note: each undeclared identifier is reported only once for each function it appears in
+exercises.c:198:15: error: ‘Nodo’ {aka ‘struct nodo’} has no member named ‘dato’
+  198 |     primerNodo->dato = arr[0];
+      |               ^~
+exercises.c:210:18: error: ‘Nodo’ {aka ‘struct nodo’} has no member named ‘dato’
+  210 |         nuevoNodo->dato = arr[i];
+      |                  ^~
+Compilation failed
+d500b14

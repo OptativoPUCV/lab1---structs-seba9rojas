@@ -185,7 +185,7 @@ typedef struct nodo {
 } Nodo;
 
 Nodo *crearListaEnlazada(int arr[], int size) {
-  if (size == 0) {
+  if (tamaño == 0) {
         return NULL;
     }
     
@@ -200,7 +200,7 @@ Nodo *crearListaEnlazada(int arr[], int size) {
     
     Nodo* nodoActual = primerNodo;
     
-    for (int i = 1; i < size; i++) {
+    for (int i = 1; i < tamaño; i++) {
         Nodo* nuevoNodo = (Nodo*)malloc(sizeof(Nodo));
         if (nuevoNodo == NULL) {
             printf("Error al asignar memoria.\n");
@@ -215,6 +215,5 @@ Nodo *crearListaEnlazada(int arr[], int size) {
     }
     
     return primerNodo;
-
- 
+  
 }
